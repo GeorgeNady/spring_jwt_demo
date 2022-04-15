@@ -23,6 +23,6 @@
 
 * create interface that `extends JpaRepository<_POJO name_, _ID data type_>`
 * adding inside interface any methods that we want to add it like `User findByEmail(String email)`
-    * `__User__` is the POJO/Entity class 
-    * `__email__` in the parameter is the same name in User __POJO__ class
+    * `User` is the POJO/Entity class 
+    * `email` in the parameter is the same name in User __POJO__ class
     *  by adding this function the JpaRepository will smart enough to know how to find the user with email attribute
