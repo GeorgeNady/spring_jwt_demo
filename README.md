@@ -42,3 +42,10 @@
         * that variables will be injected because of `@RequiredArgsConstructor` Annotation
         * we can also write it down without final syntax and put `@AutoWired` Annotation to inject it also _"this is another way for injection"_
     
+### 4- create controller
+
+* ### Annotation
+    * `@RestController` - tells spring application that this class is contained a controllers that return json responses to each end points
+    * `@RequiredArgsConstructor` - inject all required fields 
+    * `@RequestMapping("/")` - used to define the entry point for this controller
+
