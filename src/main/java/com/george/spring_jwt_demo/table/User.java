@@ -1,4 +1,4 @@
-package com.george.spring_jwt_demo.domain;
+package com.george.spring_jwt_demo.table;
 
 import lombok.*;
 import org.hibernate.Hibernate;
@@ -20,6 +20,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = AUTO)
+    @Column(name = "id",nullable = false)
     private Long id;
     private String name;
     private String email;

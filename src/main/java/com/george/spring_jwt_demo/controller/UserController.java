@@ -1,6 +1,6 @@
 package com.george.spring_jwt_demo.controller;
 
-import com.george.spring_jwt_demo.domain.User;
+import com.george.spring_jwt_demo.table.User;
 import com.george.spring_jwt_demo.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

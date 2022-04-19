@@ -1,4 +1,4 @@
-package com.george.spring_jwt_demo.domain;
+package com.george.spring_jwt_demo.table;
 
 import lombok.*;
 import org.hibernate.Hibernate;
@@ -22,7 +22,7 @@ public class Role {
 
     @Id
     @GeneratedValue(strategy = AUTO)
-    @Column(nullable = false, name = "id")
+    @Column(name = "id",nullable = false)
     private Long id;
     private String name;
 

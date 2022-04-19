@@ -1,7 +1,7 @@
 package com.george.spring_jwt_demo.service;
 
-import com.george.spring_jwt_demo.domain.Role;
-import com.george.spring_jwt_demo.domain.User;
+import com.george.spring_jwt_demo.table.Role;
+import com.george.spring_jwt_demo.table.User;
 
 import java.util.List;
 
