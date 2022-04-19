@@ -1,7 +1,7 @@
 package com.george.spring_jwt_demo.service;
 
 import com.george.spring_jwt_demo.table.Role;
-import com.george.spring_jwt_demo.table.User;
+import com.george.spring_jwt_demo.table.UserX;
 import com.george.spring_jwt_demo.repository.RoleRepository;
 import com.george.spring_jwt_demo.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,21 +18,21 @@ public class UserServiceImpl implements UserService {
     private final RoleRepository roleRepo;
 
     @Override
-    public User getUser(String email) {
+    public UserX getUser(String email) {
         log.info("Fetching user {}", email);
         return userRepo.findByEmail(email);
     }
 
     @Override
-    public List<User> finUsers() {
+    public List<UserX> finUsers() {
         log.info("Fetching all users");
         return userRepo.findAll();
     }
 
     @Override
-    public User saveUser(User user) {
-        log.info("Save user {} into a database", user.getEmail());
-        return userRepo.save(user);
+    public UserX saveUser(UserX userX) {
+        log.info("Save user {} into a database", userX.getEmail());
+        return userRepo.save(userX);
     }
 
     @Override
@@ -44,8 +44,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public void addRoleToUser(String userEmail,String roleName) {
         log.info("Adding role {} to user {}", roleName, userEmail);
-        User user = userRepo.findByEmail(userEmail);
+        UserX userX = userRepo.findByEmail(userEmail);
         Role role = roleRepo.findByName(roleName);
-        user.getRoles().add(role);
+        userX.getRoles().add(role);
     }
 }

@@ -3,10 +3,7 @@ package com.george.spring_jwt_demo.table;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import java.util.Objects;
 
@@ -22,7 +19,6 @@ public class Role {
 
     @Id
     @GeneratedValue(strategy = AUTO)
-    @Column(name = "id",nullable = false)
     private Long id;
     private String name;
 
