@@ -49,3 +49,25 @@
     * `@RequiredArgsConstructor` - inject all required fields 
     * `@RequestMapping("/")` - used to define the entry point for this controller
 
+### 5- security
+
+* ### Annotation
+    * `@Configuration` - 
+    * `@EnableWebSecurity` - 
+    * `@RequiredArgsConstructor` - 
+* ### extends
+    * `WebSecurityConfigurerAdapter` - to tell spring how we want to manage users and the security in the application
+    * #### @Overrides
+        * `configure(AuthenticationManagerBuilder auth)`
+        * `configure(HttpSecurity http)`
+* ### there is many ways to tell spring how to look for users
+    * #### {first} - `inMemoryAuthentication`
+        * it takes `username` and `password` so spring can use it to check for users whenever users are trying to log into the application
+    * ### {second} - `jdbcAuthentication`
+        * so we can create a service class ... then pass all the queries ... then user JDBC to make our own request ... then override jdbcUserDetailManagerConfigure and do all the stuff
+    * ### {third} - `userDetailsService`
+        * that we will use here in our spring application
+        * userDetailsService accept a user detail service which is a Bean that we have to override to tell to the Spring how to look for the users
+* ### Beans
+    * `@Bean passwordEncoder` - this is a function that return `BCryptPasswordEncoder`
+* we have to implement `UserDetailsService` class in `UserServiceImpl` class and Override `loadUserByUsername` method to tell our Service how to load user's data
