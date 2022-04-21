@@ -1,8 +1,8 @@
 package com.george.spring_jwt_demo.controller;
 
 import com.george.spring_jwt_demo.model.BaseResponse;
-import com.george.spring_jwt_demo.table.Role;
-import com.george.spring_jwt_demo.table.UserX;
+import com.george.spring_jwt_demo.table.RoleTable;
+import com.george.spring_jwt_demo.table.UserTable;
 import com.george.spring_jwt_demo.service.UserService;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,33 +22,33 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/users")
-    public ResponseEntity<BaseResponse<List<UserX>>> getUsers() {
-        List<UserX> userXES = userService.finUsers();
+    public ResponseEntity<BaseResponse<List<UserTable>>> getUsers() {
+        List<UserTable> userTables = userService.finUsers();
 
-        return ResponseEntity.ok().body(response(userXES, "users fetched successfully!"));
+        return ResponseEntity.ok().body(response(userTables, "users fetched successfully!"));
     }
 
     @GetMapping("/user/{email}")
-    public ResponseEntity<BaseResponse<UserX>> getUser(@PathVariable("email") String email) {
-        UserX userX = userService.getUser(email);
+    public ResponseEntity<BaseResponse<UserTable>> getUser(@PathVariable("email") String email) {
+        UserTable userTable = userService.getUser(email);
 
-        return ResponseEntity.ok().body(response(userX, "user fetched successfully!"));
+        return ResponseEntity.ok().body(response(userTable, "user fetched successfully!"));
     }
 
     @PostMapping("/user/create")
-    public ResponseEntity<BaseResponse<UserX>> saveUser(@RequestBody UserX userX) {
-        UserX createdUserX = userService.saveUser(userX);
+    public ResponseEntity<BaseResponse<UserTable>> saveUser(@RequestBody UserTable userTable) {
+        UserTable createdUserTable = userService.saveUser(userTable);
         URI uri = generateUri("/user/create");
 
-        return ResponseEntity.created(uri).body(response(createdUserX, "user created successfully!"));
+        return ResponseEntity.created(uri).body(response(createdUserTable, "user created successfully!"));
     }
 
     @PostMapping("/role/create")
-    public ResponseEntity<BaseResponse<Role>> saveRole(@RequestBody Role role) {
-        Role createdRole = userService.saveRole(role);
+    public ResponseEntity<BaseResponse<RoleTable>> saveRole(@RequestBody RoleTable roleTable) {
+        RoleTable createdRoleTable = userService.saveRole(roleTable);
         URI uri = generateUri(("/role/create"));
 
-        return ResponseEntity.created(uri).body(response(createdRole, "role created successfully!"));
+        return ResponseEntity.created(uri).body(response(createdRoleTable, "role created successfully!"));
     }
 
     @PostMapping("/user/add_role/{email}")

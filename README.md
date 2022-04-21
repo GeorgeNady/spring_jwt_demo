@@ -25,7 +25,7 @@
 * adding inside interface any methods that we want to add it like `User findByEmail(String email)`
     * `User` is the POJO/Entity class
     * `email` in the parameter is the same name in User __POJO__ class
-    * by adding this function the JpaRepository will smart enough to know how to find the userX with email attribute
+    * by adding this function the JpaRepository will smart enough to know how to find the userTable with email attribute
 
 ### 3- create Services
 
