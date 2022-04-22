@@ -71,3 +71,7 @@
 * ### Beans
     * `@Bean passwordEncoder` - this is a function that return `BCryptPasswordEncoder`
 * we have to implement `UserDetailsService` class in `UserServiceImpl` class and Override `loadUserByUsername` method to tell our Service how to load user's data
+
+### 6- Authentication
+
+* ... to be completed
