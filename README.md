@@ -75,3 +75,12 @@
 ### 6- Authentication
 
 * ... to be completed
+
+### 7- JWT and refresh TOKEN
+    
+* add `com.auth0:java-jwt:3.19.1` or any version into `pom.xml` file
+* get `User` 
+* define some `algorithm` to be used to create our token
+* create our `JWT` or `access_token` 
+* create our `JWT` or `refrsh_token`
+* pass it with response header
